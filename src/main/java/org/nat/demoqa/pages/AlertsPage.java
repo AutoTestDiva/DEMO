@@ -53,7 +53,7 @@ public class AlertsPage extends BasePage {
 
     public AlertsPage selectConfirm(String confirm) {
         if (confirm != null && confirm.equalsIgnoreCase("Ok")) {
-            driver.switchTo().alert().accept();  //switchTo() - jump in Alert-window method
+            driver.switchTo().alert().accept();  //switchTo() - jump in Alert or another window method
         } else if (confirm != null && confirm.equalsIgnoreCase("Cancel")) {
             driver.switchTo().alert().dismiss();
         }

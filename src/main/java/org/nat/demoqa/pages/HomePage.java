@@ -24,4 +24,11 @@ public class HomePage extends BasePage{
         click(alertsLink);
         return new AlertsPage(driver);
     }
+
+    @FindBy(xpath = "//a[.='Multiple Windows']")
+    WebElement windowsLink;
+    public WindowPage getMultipleWindows() {
+        click(windowsLink);
+        return new WindowPage(driver);
+    }
 }
