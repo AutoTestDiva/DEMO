@@ -1,5 +1,6 @@
 package org.nat.demoqa.pages;
 
+import org.nat.demoqa.tests.AlertTests;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,6 +56,21 @@ public class AlertsPage extends BasePage {
             driver.switchTo().alert().accept();  //switchTo() - jump in Alert-window method
         } else if (confirm != null && confirm.equalsIgnoreCase("Cancel")) {
             driver.switchTo().alert().dismiss();
+        }
+        return this;
+    }
+
+    @FindBy(css = "[onclick='jsPrompt()']")
+    WebElement promptButton;
+
+    public AlertsPage clickOnPromptButton() {
+        click(promptButton);
+        return this;
+    }
+
+    public AlertsPage enterMessageToAlert(String message) {
+        if(message != null){
+            driver.switchTo().alert().sendKeys(message);
         }
         return this;
     }

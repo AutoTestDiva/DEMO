@@ -26,4 +26,12 @@ public class AlertTests extends TestBase{
                 .verifyResult("Cancel");
         }
 
+        @Test
+        public void sendMessageToAlertTest(){
+        new AlertsPage(driver).clickOnPromptButton()
+                .enterMessageToAlert("Hello")
+                .acceptAlert()
+                .verifyResult("Hello");
+        }
+
 }
