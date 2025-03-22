@@ -10,7 +10,10 @@ public class JSExecutorTests extends TestBase {
     @Test
     public void JSExecutorTest(){
         new HomePage(driver).getFormAuthentication();
-        new JSExecutor(driver).enterDataWithJSE(UserData.USER_NAME,
-                UserData.USER_PASSWORD);
+        new JSExecutor(driver)
+                .enterDataWithJSE(UserData.USER_NAME, UserData.USER_PASSWORD)
+                .clickOnLoginButtonWithJSE()
+                .checkURLWithJSE();
+
     }
 }
