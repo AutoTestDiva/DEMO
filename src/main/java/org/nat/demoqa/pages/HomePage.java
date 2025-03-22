@@ -16,4 +16,12 @@ public class HomePage extends BasePage{
         clickWithJSExecutor(bookStore, 0, 700);
         return new SidePanel(driver);
     }
+
+    @FindBy(xpath = "//a[.='JavaScript Alerts']")
+    WebElement alertsLink;
+
+    public AlertsPage getAlerts(){
+        click(alertsLink);
+        return new AlertsPage(driver);
+    }
 }
