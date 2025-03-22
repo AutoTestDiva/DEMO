@@ -38,7 +38,7 @@ public class JSExecutor extends BasePage {
 /*  methods of JSExecutor:
 
  update(refresh) page method:   "history.go(0);"
- check all text on page:     "return document.documentElement.innerText;"
+ return all text on page:     "return document.documentElement.innerText;"
  navigate to new page:  "window.location = 'https://demoqa.com';"
  check title of page:   "return document.title;"
 */
