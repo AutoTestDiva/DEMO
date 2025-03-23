@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class ProfilePage extends BasePage {
 
     public ProfilePage(WebDriver driver) {
@@ -20,4 +22,11 @@ public class ProfilePage extends BasePage {
         return this;
     }
 
+    @FindBy(id="delete-record-undefined")
+    List<WebElement> bookListTrash;
+
+    public ProfilePage deleteBook() {
+        bookListTrash.get(0).click();
+        return this;
+    }
 }

@@ -30,5 +30,8 @@ public class AddBookToCollectionTests extends TestBase {
 
     }
 
-
+    @AfterMethod
+    public void deleteBookFromCollection(){
+        new ProfilePage(driver).deleteBook();
+    }
 }
