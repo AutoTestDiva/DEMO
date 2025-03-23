@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public abstract class BasePage {
-    WebDriver driver;
+   public WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -48,5 +48,13 @@ public abstract class BasePage {
 
     public boolean isTextPresent(WebElement element, String book) {
         return element.getText().contains(book);
+    }
+
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
