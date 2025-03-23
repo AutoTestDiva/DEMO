@@ -25,8 +25,11 @@ public class ProfilePage extends BasePage {
     @FindBy(id="delete-record-undefined")
     List<WebElement> bookListTrash;
 
+    @FindBy(id = "closeSmallModal-ok")
+    WebElement okButton;
     public ProfilePage deleteBook() {
         bookListTrash.get(0).click();
+        click(okButton);
         return this;
     }
 }

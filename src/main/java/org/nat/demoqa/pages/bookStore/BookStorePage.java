@@ -46,6 +46,8 @@ public class BookStorePage extends BasePage {
 
     @FindBy(css = ".text-right.fullButton")
     WebElement addBookButton;
+
+
     public BookStorePage addToCollection() {
         clickWithJSExecutor(addBookButton, 0, 600);
          pause(300);
