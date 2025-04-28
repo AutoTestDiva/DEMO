@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class AddBookToCollectionTests extends TestBase {
-  /*  @BeforeMethod
+   @BeforeMethod
     public void precondition() {
         new HomePage(driver).getBookStore();
         new BookStorePage(driver).clickOnLoginButton();
@@ -35,4 +35,4 @@ public class AddBookToCollectionTests extends TestBase {
         new ProfilePage(driver).deleteBook();
     }
 }
-*/
+

@@ -1,6 +1,5 @@
 package org.nat.demoqa.pages;
 
-import org.nat.demoqa.tests.JSExecutorTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

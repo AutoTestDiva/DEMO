@@ -1,6 +1,5 @@
 package org.nat.demoqa.pages;
 
-import org.nat.demoqa.tests.AlertTests;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
