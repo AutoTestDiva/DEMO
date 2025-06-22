@@ -16,7 +16,7 @@ public class AlertTests extends TestBase{
     public void acceptAlert(){
         new AlertsPage(driver).clickOnAlertButton()
                 .acceptAlert()
-                .verifyResult("You successfully clicked an alert");
+                .verifyResult("You  clicked a button");
         }
 
         @Test

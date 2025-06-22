@@ -15,18 +15,22 @@ public class AlertsPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(css = "[onclick='jsAlert()']")
+    @FindBy(css = "div[class='element-list collapse show'] li[id='item-1'] span[class='text']")
     WebElement jsAlert;
 
+    @FindBy(css = "#alertButton")
+    WebElement clickButton;
+
     public AlertsPage clickOnAlertButton() {
-        click(jsAlert);
+        clickWithJSExecutor(jsAlert, 0, 700);
+        clickWithJSExecutor(clickButton, 0, 500);
         return this;
     }
 
 
     public AlertsPage acceptAlert() {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.alertIsPresent()).accept();
         } catch (NoAlertPresentException ex) {
         }

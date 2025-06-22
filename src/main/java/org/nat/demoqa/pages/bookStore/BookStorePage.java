@@ -20,6 +20,7 @@ public class BookStorePage extends BasePage {
     WebElement searchBox;
 
     public BookStorePage enterBookName(String book) {
+        clickWithJSExecutor(searchBox, 0, 600);
         type(searchBox, book);
         return this;
     }
