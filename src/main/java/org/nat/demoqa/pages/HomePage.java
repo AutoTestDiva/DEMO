@@ -23,7 +23,6 @@ public class HomePage extends BasePage {
 
     public AlertsPage getAlerts() {
         clickWithJSExecutor(alertsLink, 0, 300);
-        // click(alertsLink);
         return new AlertsPage(driver);
     }
 

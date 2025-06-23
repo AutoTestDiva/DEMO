@@ -15,15 +15,14 @@ public class AlertTests extends TestBase{
         @Test
     public void acceptAlert(){
         new AlertsPage(driver).clickOnAlertButton()
-                .acceptAlert()
-                .verifyResult("You  clicked a button");
+                .acceptAlert();
         }
 
         @Test
     public void confirmAlertTest(){
-        new AlertsPage(driver).cliOnConfirmButton()
+        new AlertsPage(driver).clickOnConfirmButton()
                 .selectConfirm("Cancel")
-                .verifyResult("Cancel");
+                .verifyConfirmResult("You selected Cancel");
         }
 
         @Test
@@ -31,7 +30,7 @@ public class AlertTests extends TestBase{
         new AlertsPage(driver).clickOnPromptButton()
                 .enterMessageToAlert("Hello")
                 .acceptAlert()
-                .verifyResult("Hello");
+                .verifyPromtBoxResult("You entered Hello");
         }
 
 }

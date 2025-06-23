@@ -37,19 +37,30 @@ public class AlertsPage extends BasePage {
         return this;
     }
 
-    @FindBy(id = "result")
+    @FindBy(xpath = "//span[@id='promptResult']")
     WebElement result;
 
-    public AlertsPage verifyResult(String message) {
+    public AlertsPage verifyPromtBoxResult(String message) {
         Assert.assertTrue(shouldHaveText(result, message, 5));
         return this;
     }
 
-    @FindBy(css = "[onclick='jsConfirm()']")
+    @FindBy(xpath = "//span[@id='confirmResult']")
+    WebElement confirmResult;
+
+    public AlertsPage verifyConfirmResult(String message) {
+        Assert.assertTrue(shouldHaveText(confirmResult, message, 5));
+        return this;
+    }
+
+
+
+    @FindBy(css = "#confirmButton")
     WebElement jsConfirm;
 
-    public AlertsPage cliOnConfirmButton() {
-        click(jsConfirm);
+    public AlertsPage clickOnConfirmButton() {
+        clickWithJSExecutor(jsAlert, 0, 700);
+        clickWithJSExecutor(jsConfirm, 0, 700);;
         return this;
     }
 
@@ -63,11 +74,12 @@ public class AlertsPage extends BasePage {
         return this;
     }
 
-    @FindBy(css = "[onclick='jsPrompt()']")
+    @FindBy(css = "#promtButton")
     WebElement promptButton;
 
     public AlertsPage clickOnPromptButton() {
-        click(promptButton);
+        clickWithJSExecutor(jsAlert, 0, 700);
+        clickWithJSExecutor(promptButton, 0, 700);
         return this;
     }
 
@@ -77,4 +89,7 @@ public class AlertsPage extends BasePage {
         }
         return this;
     }
+
+
+
 }
