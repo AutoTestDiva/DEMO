@@ -5,7 +5,7 @@ import org.nat.demoqa.pages.WindowPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class NewTabTest extends TestBase {
+public class NewTabTest extends TestBase {   // for site http://the-internet.herokuapp.com/
 
     @BeforeMethod
     public void precondition() {

@@ -22,7 +22,7 @@ public abstract class BasePage {
     }
     public void type(WebElement element, String text){
         if(text!=null){
-            click(element);
+            clickWithJSExecutor(element, 0, 600);
             element.clear();
             element.sendKeys(text);
         }

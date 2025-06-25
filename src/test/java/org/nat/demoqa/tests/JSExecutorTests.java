@@ -5,7 +5,7 @@ import org.nat.demoqa.pages.HomePage;
 import org.nat.demoqa.pages.JSExecutor;
 import org.testng.annotations.Test;
 
-public class JSExecutorTests extends TestBase {
+public class JSExecutorTests extends TestBase {   // for site http://the-internet.herokuapp.com/
 
     @Test
     public void JSExecutorTest(){

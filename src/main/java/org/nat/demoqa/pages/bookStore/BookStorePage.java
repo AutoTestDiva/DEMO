@@ -16,11 +16,11 @@ public class BookStorePage extends BasePage {
         super(driver);
     }
 
-    @FindBy(id="searchBox")
+    @FindBy(css="#searchBox")
     WebElement searchBox;
 
     public BookStorePage enterBookName(String book) {
-        clickWithJSExecutor(searchBox, 0, 600);
+        clickWithJSExecutor(searchBox, 0, 700);
         type(searchBox, book);
         return this;
     }
