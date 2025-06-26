@@ -14,6 +14,5 @@ public class JSExecutorTests extends TestBase {   // for site http://the-interne
                 .enterDataWithJSE(UserData.USER_NAME, UserData.USER_PASSWORD)
                 .clickOnLoginButtonWithJSE()
                 .checkURLWithJSE();
-
     }
 }
