@@ -14,15 +14,15 @@ public class TestBase {
     @BeforeMethod
     public void init(){
         driver = new ChromeDriver();
-       // driver.get("https://demoqa.com");
-        driver.get("http://the-internet.herokuapp.com/");
+        driver.get("https://demoqa.com");
+        //driver.get("http://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
 
 
-    @AfterMethod (enabled = false)
+    @AfterMethod (enabled = false) //true - closed opened seit
     public void tearDown(){
         driver.quit();
     }

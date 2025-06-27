@@ -3,6 +3,7 @@ package org.nat.demoqa.pages;
 import org.nat.demoqa.pages.bookStore.BookStorePage;
 import org.nat.demoqa.pages.bookStore.LoginPage;
 import org.nat.demoqa.pages.bookStore.ProfilePage;
+import org.nat.demoqa.pages.elements.LinksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,5 +26,12 @@ public class SidePanel extends BasePage {
     public ProfilePage selectProfile() {
         clickWithJSExecutor(profile, 0, 600);
         return new ProfilePage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Links']")
+    WebElement links;
+    public LinksPage selectLinks() {
+        clickWithJSExecutor(links, 0, 500);
+        return new LinksPage(driver);
     }
 }

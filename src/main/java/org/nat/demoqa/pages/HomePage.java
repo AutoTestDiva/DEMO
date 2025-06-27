@@ -1,8 +1,10 @@
 package org.nat.demoqa.pages;
 
+import org.nat.demoqa.pages.elements.LinksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
 
 public class HomePage extends BasePage {
 
@@ -41,4 +43,12 @@ public class HomePage extends BasePage {
         click(formLink);
         return new JSExecutor(driver);
     }
+
+    @FindBy(css = ".top-card:nth-child(1)")
+    WebElement elements;
+    public SidePanel getElements() {
+        clickWithJSExecutor(elements, 0,500);
+        return new SidePanel(driver);
+    }
+
 }
