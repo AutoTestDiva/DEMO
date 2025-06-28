@@ -1,0 +1,46 @@
+package org.nat.demoqa.pages.elements;
+
+import org.nat.demoqa.pages.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class BrokenLinksImagesPage extends BasePage {
+
+    public BrokenLinksImagesPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(tagName = "img")
+    List<WebElement> images;
+
+    public BrokenLinksImagesPage checkBrokenImages() {
+        System.out.println("Total number of images on the page: " + images.size());
+
+        for (int i = 0; i < images.size(); i++) {
+            WebElement image = images.get(i);
+            String imageUrl = image.getDomAttribute("src");
+            System.out.println("URL of image " + (i + 1) + " is " + imageUrl);
+            verifyImagesLinks(imageUrl);
+
+            try {
+                boolean imageDisplayed = (Boolean) ((JavascriptExecutor) driver)
+                        .executeScript("return (typeof arguments[0].naturalWidth != undefined && arguments[0].naturalWidth>0);", image);
+
+                if (imageDisplayed) {
+                    System.out.println("DISPLAY - OK");
+                    System.out.println("************************");
+                } else {
+                    System.out.println("DISPLAY - BROKEN");
+                    System.out.println("************************");
+                }
+            } catch (Exception ex) {
+                System.out.println("ERROR OCCURED");
+            }
+        }
+        return this;
+    }
+}

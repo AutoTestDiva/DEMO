@@ -2,6 +2,7 @@ package org.nat.demoqa.tests.elements;
 
 import org.nat.demoqa.pages.HomePage;
 import org.nat.demoqa.pages.SidePanel;
+import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
 import org.nat.demoqa.pages.elements.LinksPage;
 import org.nat.demoqa.tests.TestBase;
 import org.testng.annotations.BeforeMethod;
@@ -9,17 +10,25 @@ import org.testng.annotations.Test;
 
 public class LinksTests extends TestBase {
     @BeforeMethod
-    public void precondition(){
+    public void precondition() {
         new HomePage(driver).getElements();
     }
+
     @Test
-    public void getAllLinksTest(){
+    public void getAllLinksTest() {
         new SidePanel(driver).selectLinks();
         new LinksPage(driver).getAllLinks();
     }
+
     @Test
-    public void checkBrokenLinksTest(){
+    public void checkBrokenLinksTest() {
         new SidePanel(driver).selectLinks();
-        new LinksPage(driver).checkBrokenLinks();
+        new LinksPage(driver).checkBrokenLinks2();
+    }
+
+    @Test
+    public void checkBrokenImages() {
+        new SidePanel(driver).selectBrokenLinksImages();
+        new BrokenLinksImagesPage(driver).checkBrokenImages();
     }
 }

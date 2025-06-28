@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,12 +15,13 @@ public class LinksPage extends BasePage {
 
     @FindBy(tagName = "a")
     List<WebElement> allLinks;
+
     public LinksPage getAllLinks() {
         System.out.println("Total number of links on the page: " + allLinks.size());
         String url;
 
         Iterator<WebElement> iterator = allLinks.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             url = iterator.next().getText();
             System.out.println(url);
         }
@@ -32,30 +30,32 @@ public class LinksPage extends BasePage {
 
     @FindBy(css = "[href]")
     List<WebElement> attr;
-    public LinksPage checkBrokenLinks() {
-        for (int i = 0; i<allLinks.size(); i++){
-            WebElement el = allLinks.get(i);
+
+//        public LinksPage checkBrokenLinks() {
+//        for (int i = 0; i < allLinks.size(); i++) {
+//            WebElement el = allLinks.get(i);
+//            String url = el.getDomAttribute("href");
+//            verifyLinks(url);
+//        }
+//        return this;
+//    }
+    public LinksPage checkBrokenLinks2() {  //you can see names of broken links
+        for (WebElement el : allLinks) {
+            String linkText = el.getText().trim();
             String url = el.getDomAttribute("href");
-            verifyLinks(url);
+
+            if (url == null || url.isEmpty()) {
+                System.out.println("Link ist without href or empty: \"" + linkText + "\"");
+                continue;
+            }
+
+            if (url.startsWith("javascript")) {
+                System.out.println("Broken JavaScript - link: \"" + linkText + "\" (" + url + ")");
+                continue;
+            }
+
+            verifyLinks(url, linkText.isEmpty() ? "[without text]" : linkText);
         }
         return this;
-    }
-
-    public void verifyLinks(String linkUrl) {
-    try {
-        URL url = new URL(linkUrl);
-        //create connection and get response status code
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setConnectTimeout(5000);
-        connection.connect();
-        //get response status code
-        if (connection.getResponseCode() >= 400) {
-            System.out.println(linkUrl + " - " + connection.getResponseMessage() + " is a broken link ");
-        } else {
-            System.out.println(linkUrl + " - " + connection.getResponseMessage());
-        }
-    }catch (Exception ex){
-        System.out.println(linkUrl + " - " + ex.getMessage() + " is a broken link");
-    }
     }
 }
