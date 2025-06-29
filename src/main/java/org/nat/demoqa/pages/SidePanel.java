@@ -1,5 +1,6 @@
 package org.nat.demoqa.pages;
 
+import org.nat.demoqa.pages.alertsFramesWindows.FramesPage;
 import org.nat.demoqa.pages.bookStore.BookStorePage;
 import org.nat.demoqa.pages.bookStore.LoginPage;
 import org.nat.demoqa.pages.bookStore.ProfilePage;
@@ -45,5 +46,12 @@ public class SidePanel extends BasePage {
     public BrokenLinksImagesPage selectBrokenLinksImages() {
         clickWithJSExecutor(brokenLinksImages, 0, 600);
         return new BrokenLinksImagesPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Frames']")
+    WebElement frames;
+    public FramesPage selectFrames() {
+        clickWithJSExecutor(frames,0,500);
+        return new FramesPage(driver);
     }
 }

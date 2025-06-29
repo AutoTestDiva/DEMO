@@ -51,4 +51,10 @@ public class HomePage extends BasePage {
         return new SidePanel(driver);
     }
 
+    @FindBy(css = ".top-card:nth-child(3)")
+    WebElement alertsFramesWindows;
+    public SidePanel getAlertsFramesWindows() {
+        clickWithJSExecutor(alertsFramesWindows,0,400);
+        return new SidePanel(driver);
+    }
 }
