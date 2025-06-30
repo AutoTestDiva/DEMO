@@ -25,4 +25,26 @@ public class FramesPage extends BasePage {
         System.out.println("The total numbers of iframes: " + numberOfIframes);
         return this;
     }
+
+    @FindBy(id = "sampleHeading")
+    WebElement sampleHeading;
+    public FramesPage switchToIframeByIndex(int index) {
+    //switch to iframe by index
+        driver.switchTo().frame(index);
+        System.out.println("Text of the frame: " + sampleHeading.getText());
+        return this;
+    }
+
+    @FindBy (id = "frame1")
+    WebElement frame1;
+    @FindBy (id = "framesWrapper")
+    WebElement framesWrapper;
+
+    public FramesPage switchToIframeByID() {
+        driver.switchTo().frame(frame1);
+        System.out.println("Text of the frame: " + sampleHeading.getText());
+        driver.switchTo().defaultContent();  //method lets to return on main page
+        System.out.println("Text of the frame: " + framesWrapper.getText());
+        return this;
+    }
 }

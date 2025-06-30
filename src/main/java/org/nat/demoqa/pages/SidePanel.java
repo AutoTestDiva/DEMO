@@ -1,6 +1,7 @@
 package org.nat.demoqa.pages;
 
 import org.nat.demoqa.pages.alertsFramesWindows.FramesPage;
+import org.nat.demoqa.pages.alertsFramesWindows.NestedFramesPage;
 import org.nat.demoqa.pages.bookStore.BookStorePage;
 import org.nat.demoqa.pages.bookStore.LoginPage;
 import org.nat.demoqa.pages.bookStore.ProfilePage;
@@ -50,8 +51,17 @@ public class SidePanel extends BasePage {
 
     @FindBy(xpath = "//span[.='Frames']")
     WebElement frames;
+
     public FramesPage selectFrames() {
-        clickWithJSExecutor(frames,0,500);
+        clickWithJSExecutor(frames, 0, 500);
         return new FramesPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Nested Frames']")
+    WebElement nestedFrames;
+
+    public NestedFramesPage selectNestedFrames() {
+        clickWithJSExecutor(nestedFrames, 0, 500);
+        return new NestedFramesPage(driver);
     }
 }
