@@ -14,10 +14,10 @@ public class AutoCompleteTests extends TestBase {
         new HomePage(driver).getWidgets();
         new SidePanel(driver).selectAutoComplete();
     }
+
     @Test
-    public void autoCompleteTest(){
+    public void autoCompleteTest() {
         new AutoCompletePage(driver).autoComplete()
                 .assertAutoComplete("Magenta");
-
     }
 }
