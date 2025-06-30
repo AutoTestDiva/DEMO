@@ -6,6 +6,7 @@ import org.nat.demoqa.pages.bookStore.BookStorePage;
 import org.nat.demoqa.pages.bookStore.LoginPage;
 import org.nat.demoqa.pages.bookStore.ProfilePage;
 import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
+import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,5 +64,13 @@ public class SidePanel extends BasePage {
     public NestedFramesPage selectNestedFrames() {
         clickWithJSExecutor(nestedFrames, 0, 500);
         return new NestedFramesPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Buttons']")
+    WebElement buttons;
+
+    public ButtonsPage selectButtons() {
+        clickWithJSExecutor(buttons,0,500);
+        return new ButtonsPage(driver);
     }
 }
