@@ -8,6 +8,7 @@ import org.nat.demoqa.pages.bookStore.ProfilePage;
 import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
 import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
+import org.nat.demoqa.pages.widgets.AutoCompletePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -72,5 +73,12 @@ public class SidePanel extends BasePage {
     public ButtonsPage selectButtons() {
         clickWithJSExecutor(buttons,0,500);
         return new ButtonsPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Auto Complete']")
+    WebElement autoComplete;
+    public AutoCompletePage selectAutoComplete() {
+        clickWithJSExecutor(autoComplete,0,500);
+        return new AutoCompletePage(driver);
     }
 }
