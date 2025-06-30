@@ -20,4 +20,9 @@ public class ButtonsTests extends TestBase {
                .assertDoubleClick("You have done a double click");
 
     }
+    @Test
+    public void rightClickTest(){
+        new ButtonsPage(driver).rightClick()
+                .assertRightClick("You have done a right click");
+    }
 }
