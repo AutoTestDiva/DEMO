@@ -17,5 +17,8 @@ public class SelectMenuTest extends TestBase {
     public void selectOldStyleTest(){
         new SelectMenuPage(driver).selectOldStyle("Blue");
     }
-
+    @Test
+    public void multiSelectTest(){
+        new SelectMenuPage(driver).multiSelect(new String[]{"Blue", "Black", "Red"});
+    }
 }
