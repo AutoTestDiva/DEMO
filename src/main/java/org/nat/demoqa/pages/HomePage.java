@@ -64,4 +64,8 @@ public class HomePage extends BasePage {
         clickWithJSExecutor(widgets,0,600);
         return new SidePanel(driver);
     }
+
+    public String getValueAttribute(WebElement element, String name) {
+        return element.getDomAttribute(name);
+    }
 }
