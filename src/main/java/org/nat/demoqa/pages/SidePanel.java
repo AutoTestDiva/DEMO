@@ -9,6 +9,7 @@ import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
 import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
 import org.nat.demoqa.pages.widgets.AutoCompletePage;
+import org.nat.demoqa.pages.widgets.MenuPage;
 import org.nat.demoqa.pages.widgets.SliderPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -88,5 +89,12 @@ public class SidePanel extends BasePage {
     public SliderPage selectSlider() {
         clickWithJSExecutor(slider,0,700);
         return new SliderPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Menu']")
+    WebElement menu;
+    public MenuPage selectMenu() {
+        clickWithJSExecutor(menu,0,700);
+        return new MenuPage(driver);
     }
 }
