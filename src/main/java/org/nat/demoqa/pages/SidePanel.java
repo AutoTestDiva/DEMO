@@ -10,6 +10,7 @@ import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
 import org.nat.demoqa.pages.widgets.AutoCompletePage;
 import org.nat.demoqa.pages.widgets.MenuPage;
+import org.nat.demoqa.pages.widgets.SelectMenuPage;
 import org.nat.demoqa.pages.widgets.SliderPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -96,5 +97,13 @@ public class SidePanel extends BasePage {
     public MenuPage selectMenu() {
         clickWithJSExecutor(menu,0,700);
         return new MenuPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Select Menu']")
+    WebElement selectMenu;
+
+    public SelectMenuPage selectSelectMenu() {
+        clickWithJSExecutor(selectMenu, 0, 700);
+        return new SelectMenuPage(driver);
     }
 }
