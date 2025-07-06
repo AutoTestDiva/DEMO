@@ -33,7 +33,8 @@ public class SelectMenuPage extends HomePage {
     @FindBy(id = "react-select-4-input")
     WebElement inputSelect;
 
-    @FindBy(css = "html")
+    //@FindBy(css = "html")
+    @FindBy(xpath = "//b[.='Multiselect drop down']")
     WebElement space;
     public SelectMenuPage multiSelect(String[] colors) {
         pause(1000);
