@@ -26,8 +26,10 @@ public class PracticeFormTests extends TestBase {
                 .uploadFile(StudentData.PHOTO_PATH)
                 .enterAddress(StudentData.ADDRESS)
                 .selectState(StudentData.STATE)
-                .selectCity(StudentData.CITY);
-        //click on submit button
+                .selectCity(StudentData.CITY)
+                .submit()
+                .assertSubmiting();
+
 
     }
 }

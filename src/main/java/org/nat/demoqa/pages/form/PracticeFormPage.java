@@ -12,7 +12,6 @@ public class PracticeFormPage extends HomePage {
         super(driver);
     }
 
-
     @FindBy(id = "firstName")
     WebElement firstName;
 
@@ -105,7 +104,6 @@ public class PracticeFormPage extends HomePage {
             }
         }
             return this;
-
     }
 
     @FindBy(id = "uploadPicture")
@@ -144,6 +142,15 @@ public class PracticeFormPage extends HomePage {
         clickWithJSExecutor(city,0,600);
         cityInput.sendKeys(ci);
         cityInput.sendKeys(Keys.ENTER);
+        return this;
+    }
+
+
+    @FindBy(id = "submit")
+    WebElement submit;
+
+   public PracticeFormPage submit() {
+        click(submit);
         return this;
     }
 }
