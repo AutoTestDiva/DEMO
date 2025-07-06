@@ -8,6 +8,7 @@ import org.nat.demoqa.pages.bookStore.ProfilePage;
 import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
 import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
+import org.nat.demoqa.pages.form.PracticeFormPage;
 import org.nat.demoqa.pages.widgets.AutoCompletePage;
 import org.nat.demoqa.pages.widgets.MenuPage;
 import org.nat.demoqa.pages.widgets.SelectMenuPage;
@@ -105,5 +106,12 @@ public class SidePanel extends BasePage {
     public SelectMenuPage selectSelectMenu() {
         clickWithJSExecutor(selectMenu, 0, 700);
         return new SelectMenuPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Practice Form']")
+    WebElement practiceForm;
+    public PracticeFormPage selectPracticeForm() {
+        clickWithJSExecutor(practiceForm,0,500);
+        return new PracticeFormPage(driver);
     }
 }

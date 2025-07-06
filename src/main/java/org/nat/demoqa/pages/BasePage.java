@@ -1,5 +1,6 @@
 package org.nat.demoqa.pages;
 
+import org.nat.demoqa.pages.form.PracticeFormPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,10 +14,12 @@ import java.time.Duration;
 
 public abstract class BasePage {
     public WebDriver driver;
+    JavascriptExecutor js;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        js = (JavascriptExecutor) driver;
     }
 
     public void click(WebElement element) {
@@ -32,8 +35,6 @@ public abstract class BasePage {
     }
 
     public void clickWithJSExecutor(WebElement element, int x, int y) {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(" + x + "," + y + ")");
         element.click();
     }
@@ -103,5 +104,17 @@ public abstract class BasePage {
             System.out.println("Ссылка: \"" + linkText + "\" - " + linkUrl + " - ОШИБКА: " + ex.getMessage());
         }
 
+    }
+    public void hideIframes() {
+        hideAd();       //скрывает рекламу
+        hideFooter();   //скрывает footer
+
+    }
+
+     public void hideAd() {          //скрывает рекламу (именно JavascriptExecutor под капотом. Селениум не может это сделать,он под капотом не видит)
+        js.executeScript("document.getElementById('adplus-anchor').style.display='none';");
+    }
+    public void hideFooter() {      //скрывает footer (именно JavascriptExecutor под капотом. Селениум не может это сделать, он под капотом не видит)
+        js.executeScript("document.querySelector('footer').style.display='none';");
     }
 }
