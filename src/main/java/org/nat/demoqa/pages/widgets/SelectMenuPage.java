@@ -1,10 +1,7 @@
 package org.nat.demoqa.pages.widgets;
 
 import org.nat.demoqa.pages.HomePage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -42,6 +39,21 @@ public class SelectMenuPage extends HomePage {
             if (colors[i]!=null) {
                 inputSelect.sendKeys(colors[i]);
                 inputSelect.sendKeys(Keys.ENTER);
+            }
+            click(space);
+        }
+        return this;
+    }
+
+    @FindBy(xpath = "(//div[@class=' css-1hwfws3'])[3]")
+    WebElement multiSelectContainer;
+
+    public SelectMenuPage multiSelect1(String[] colors) {
+        pause(1000);
+        for (int i=0; i< colors.length; i++){
+            if (colors[i]!=null) {
+               clickWithJSExecutor(multiSelectContainer, 0, 500);
+               driver.findElement(By.xpath(String.format("//*[text()='%s']", colors[i]))).click(); //I`m looking for an element, when I don`t know xpass/  Пишем приблизительный xpass
             }
             click(space);
         }
