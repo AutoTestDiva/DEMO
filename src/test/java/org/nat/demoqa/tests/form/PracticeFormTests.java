@@ -20,15 +20,13 @@ public class PracticeFormTests extends TestBase {
         new PracticeFormPage(driver).enterPersonalData(StudentData.FIRST_NAME, StudentData.LAST_NAME,
                 StudentData.EMAIL, StudentData.PHONE_NUMBER)
                 .selectGender(StudentData.GENDER)
-                .enterDate(StudentData.DATE);
-
-        // date of birth
-        //select subjects
-        //select hobby
-        //upload file
-        //enter address
-        //select state
-        //select city
+                .enterDate(StudentData.DATE)
+                .selectSubjects(StudentData.SUBJECTS)
+                .selectHobby(StudentData.HOBBIES)
+                .uploadFile(StudentData.PHOTO_PATH)
+                .enterAddress(StudentData.ADDRESS)
+                .selectState(StudentData.STATE)
+                .selectCity(StudentData.CITY);
         //click on submit button
 
     }

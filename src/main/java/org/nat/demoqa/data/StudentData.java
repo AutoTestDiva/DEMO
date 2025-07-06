@@ -8,7 +8,7 @@ public class StudentData {
     public static final String GENDER = "Male";
     public static final String DATE = "20 May 1944";
     public static final String [] SUBJECTS = {"Maths", "Chemistry"};
-    public static final String [] HOBBIES = {"Sport", "Reading"};
+    public static final String [] HOBBIES = {"Sports", "Reading"};
     public static final String PHOTO_PATH = "C:/Tools/photo.jpg";
     public static final String ADDRESS = "Tortuga";
     public static final String STATE = "NCR";

@@ -69,4 +69,81 @@ public class PracticeFormPage extends HomePage {
         dateOfBirthInput.sendKeys(Keys.ENTER);
         return this;
     }
+
+    @FindBy(id = "subjectsInput")
+    WebElement subjectsInput;
+
+
+    public PracticeFormPage selectSubjects(String[] subjects) {
+             for (int i =0; i<subjects.length; i++){
+                if (subjects[i] !=null){
+                    typeWithJSExecutor(subjectsInput,subjects[i], 0,500);
+                    subjectsInput.sendKeys(Keys.ENTER);
+                }
+            }
+        return this;
+    }
+
+    @FindBy(css = "[for='hobbies-checkbox-1']")
+    WebElement sports;
+
+    @FindBy(css = "[for='hobbies-checkbox-2']")
+    WebElement reading;
+
+    @FindBy(css = "[for='hobbies-checkbox-3']")
+    WebElement music;
+    public PracticeFormPage selectHobby(String[] hobbies) {
+        for (int i = 0; i < hobbies.length; i++) {
+            if (hobbies[i].equals("Sports")) {
+                click(sports);
+            }
+            if (hobbies[i].equals("Reading")) {
+                click(reading);
+            }
+            if (hobbies[i].equals("Music")) {
+                click(music);
+            }
+        }
+            return this;
+
+    }
+
+    @FindBy(id = "uploadPicture")
+    WebElement uploadPicture;
+    public PracticeFormPage uploadFile(String photoPath) {
+        uploadPicture.sendKeys(photoPath);
+        return this;
+    }
+
+
+    @FindBy(id = "currentAddress")
+    WebElement currentAddress;
+    public PracticeFormPage enterAddress(String address) {
+        type(currentAddress, address);
+        return this;
+    }
+
+    @FindBy(id = "state")
+    WebElement state;
+
+    @FindBy(id = "react-select-3-input")
+    WebElement stateInput;
+    public PracticeFormPage selectState(String st) {
+        clickWithJSExecutor(state,0,700);
+        stateInput.sendKeys(st);
+        stateInput.sendKeys(Keys.ENTER);
+        return this;
+    }
+
+    @FindBy(id = "city")
+    WebElement city;
+
+    @FindBy(id = "react-select-4-input")
+    WebElement cityInput;
+    public PracticeFormPage selectCity(String ci) {
+        clickWithJSExecutor(city,0,600);
+        cityInput.sendKeys(ci);
+        cityInput.sendKeys(Keys.ENTER);
+        return this;
+    }
 }
