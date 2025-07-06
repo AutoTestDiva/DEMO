@@ -22,8 +22,13 @@ public class SelectMenuTest extends TestBase {
         new SelectMenuPage(driver).multiSelect(new String[]{"Blue", "Black", "Red"});
     }
 
-    @Test  //when I cannot recognize xpass of color
+    @Test  //The same like multiSelectTest, but when I cannot recognize xpass of color
     public void multiSelectTest1(){
         new SelectMenuPage(driver).multiSelect1(new String[]{"Blue", "Black", "Red"});
+    }
+    @Test
+    public void standardMultiSelectTest(){
+        new SelectMenuPage(driver).standardMultiSelect(2);
+
     }
 }

@@ -53,9 +53,19 @@ public class SelectMenuPage extends HomePage {
         for (int i=0; i< colors.length; i++){
             if (colors[i]!=null) {
                clickWithJSExecutor(multiSelectContainer, 0, 500);
-               driver.findElement(By.xpath(String.format("//*[text()='%s']", colors[i]))).click(); //I`m looking for an element, when I don`t know xpass/  Пишем приблизительный xpass
+               driver.findElement(By.xpath(String.format("//*[text()='%s']", colors[i]))).click(); //I`m looking for an element, when I don`t know xpass/  Пишем приблизительный xpass, преобразующий в текст color
             }
             click(space);
+        }
+        return this;
+    }
+
+    @FindBy(id = "cars")
+    WebElement cars;
+    public SelectMenuPage standardMultiSelect(int index) {
+        Select select = new Select(cars);
+        if (select.isMultiple()){  //.isMultiple() - метод множественного выбора
+            select.selectByIndex(index);
         }
         return this;
     }
