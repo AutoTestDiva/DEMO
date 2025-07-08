@@ -163,4 +163,18 @@ public class PracticeFormPage extends HomePage {
         Assert.assertTrue(isTextPresent(modalTitle, title));
         return this;
     }
+
+    @FindBy(css = ".react-datepicker__month-select")
+    WebElement selectMonth;
+
+    @FindBy(css = ".react-datepicker__year-select")
+    WebElement selectYear;
+
+    @FindBy(xpath = "//div[@class='react-datepicker__week']//div[.='15']")
+    WebElement selectDay;
+
+    public PracticeFormPage selectDate(String month, String year, String day) {
+
+        return this;
+    }
 }
