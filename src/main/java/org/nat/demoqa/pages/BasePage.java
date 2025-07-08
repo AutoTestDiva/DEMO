@@ -112,7 +112,7 @@ public abstract class BasePage {
     }
 
      public void hideAd() {          //скрывает рекламу (именно JavascriptExecutor под капотом. Селениум не может это сделать,он под капотом не видит)
-        js.executeScript("document.getElementById('adplus-anchor').style.display='none';");
+        js.executeScript("document.getElementById('adplus-anchor').style.display='none';"); // adplus-anchor - is an element by id
     }
     public void hideFooter() {      //скрывает footer (именно JavascriptExecutor под капотом. Селениум не может это сделать, он под капотом не видит)
         js.executeScript("document.querySelector('footer').style.display='none';");

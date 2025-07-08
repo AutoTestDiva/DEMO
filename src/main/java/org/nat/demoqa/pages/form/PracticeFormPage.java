@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class PracticeFormPage extends HomePage {
 
@@ -151,6 +152,15 @@ public class PracticeFormPage extends HomePage {
 
    public PracticeFormPage submit() {
         click(submit);
+        return this;
+    }
+
+
+    @FindBy(id = "example-modal-sizes-title-lg")
+    WebElement modalTitle;
+
+    public PracticeFormPage assertSubmit(String title) {
+        Assert.assertTrue(isTextPresent(modalTitle, title));
         return this;
     }
 }
