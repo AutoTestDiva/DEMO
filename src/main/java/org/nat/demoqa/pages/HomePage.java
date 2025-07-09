@@ -64,14 +64,17 @@ public class HomePage extends BasePage {
         return new SidePanel(driver);
     }
 
-    public String getValueAttribute(WebElement element, String name) {
-        return element.getDomAttribute(name);
-    }
-
     @FindBy(css = ".top-card:nth-child(2)")
     WebElement forms;
     public SidePanel getForms() {
         clickWithJSExecutor(forms,0,500);
+        return new SidePanel(driver);
+    }
+
+    @FindBy(css = ".top-card:nth-child(5)")
+    WebElement interactions;
+    public SidePanel getInteractions() {
+        clickWithJSExecutor(interactions,0,500);
         return new SidePanel(driver);
     }
 }

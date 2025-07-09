@@ -117,4 +117,8 @@ public abstract class BasePage {
     public void hideFooter() {      //скрывает footer (именно JavascriptExecutor под капотом. Селениум не может это сделать, он под капотом не видит)
         js.executeScript("document.querySelector('footer').style.display='none';");
     }
+
+    public String getValueAttribute(WebElement element, String name) {
+        return element.getDomAttribute(name);
+    }
 }

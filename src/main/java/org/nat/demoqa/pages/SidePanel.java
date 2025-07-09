@@ -9,10 +9,8 @@ import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
 import org.nat.demoqa.pages.elements.ButtonsPage;
 import org.nat.demoqa.pages.elements.LinksPage;
 import org.nat.demoqa.pages.form.PracticeFormPage;
-import org.nat.demoqa.pages.widgets.AutoCompletePage;
-import org.nat.demoqa.pages.widgets.MenuPage;
-import org.nat.demoqa.pages.widgets.SelectMenuPage;
-import org.nat.demoqa.pages.widgets.SliderPage;
+import org.nat.demoqa.pages.interactions.DroppablePage;
+import org.nat.demoqa.pages.widgets.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -113,5 +111,20 @@ public class SidePanel extends BasePage {
     public PracticeFormPage selectPracticeForm() {
         clickWithJSExecutor(practiceForm,0,500);
         return new PracticeFormPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Tool Tips']")
+    WebElement toolTips;
+    public ToolTipsPage selectToolTips() {
+    clickWithJSExecutor(toolTips,0, 700);
+        return new ToolTipsPage(driver);
+    }
+
+
+    @FindBy(xpath = "//span[.='Droppable']")
+    WebElement droppable;
+    public DroppablePage selectDroppable() {
+        clickWithJSExecutor(droppable,0, 700);
+        return new DroppablePage(driver);
     }
 }

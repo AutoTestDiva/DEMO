@@ -22,7 +22,7 @@ public class BrokenLinksImagesPage extends BasePage {
 
         for (int i = 0; i < images.size(); i++) {
             WebElement image = images.get(i);
-            String imageUrl = image.getDomAttribute("src");
+            String imageUrl = getValueAttribute(image, "src");
             System.out.println("URL of image " + (i + 1) + " is " + imageUrl);
             verifyImagesLinks(imageUrl);
 

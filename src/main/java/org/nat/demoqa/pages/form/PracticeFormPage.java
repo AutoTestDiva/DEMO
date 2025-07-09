@@ -75,7 +75,6 @@ public class PracticeFormPage extends HomePage {
     @FindBy(id = "subjectsInput")
     WebElement subjectsInput;
 
-
     public PracticeFormPage selectSubjects(String[] subjects) {
              for (int i =0; i<subjects.length; i++){
                 if (subjects[i] !=null){
@@ -115,7 +114,6 @@ public class PracticeFormPage extends HomePage {
         uploadPicture.sendKeys(photoPath);
         return this;
     }
-
 
     @FindBy(id = "currentAddress")
     WebElement currentAddress;
@@ -172,7 +170,7 @@ public class PracticeFormPage extends HomePage {
     @FindBy(css = ".react-datepicker__year-select")
     WebElement selectYear;
 
-   //day = xpath = "//div[@class='react-datepicker__week']//div[.='15']")
+   //day = xpath = "//div[@class='react-datepicker__week']//div[.='15']") - instead //div[.='15'] write //div[.='"+day+"']
 
     public PracticeFormPage selectDate(String month, String year, String day) {
         clickWithJSExecutor(dateOfBirthInput, 0, 300);

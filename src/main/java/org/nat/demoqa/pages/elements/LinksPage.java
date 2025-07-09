@@ -42,7 +42,7 @@ public class LinksPage extends BasePage {
     public LinksPage checkBrokenLinks2() {  //you can see names of broken links
         for (WebElement el : allLinks) {
             String linkText = el.getText().trim();
-            String url = el.getDomAttribute("href");
+            String url = getValueAttribute(el, "href");
 
             if (url == null || url.isEmpty()) {
                 System.out.println("Link ist without href or empty: \"" + linkText + "\"");
