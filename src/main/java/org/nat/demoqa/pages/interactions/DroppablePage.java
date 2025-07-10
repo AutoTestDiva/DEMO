@@ -30,4 +30,25 @@ public class DroppablePage extends BasePage {
         Assert.assertTrue(isTextPresent(dropHere, text));
         return this;
     }
+
+    public DroppablePage actionDragMeBy(int x, int y) {
+        pause(1000);
+        clickWithJSExecutor(dragMe, 0, 500);
+        //get coordinates of dragMe(from) and print
+        int xOffset1 = dragMe.getLocation().getX();
+        int yOffset1 = dragMe.getLocation().getY();
+        System.out.println("xOffset1 --> " + xOffset1+ "  yOffset1 --> " + yOffset1);
+
+        //get coordinates dropHere(to) and print
+        int xOffset = dropHere.getLocation().getX();
+        int yOffset = dropHere.getLocation().getY();
+        System.out.println("xOffset --> " + xOffset+ "  yOffset --> " + yOffset);
+
+        //get difference xOffset and yOffset
+       xOffset = (xOffset- xOffset1)+x;
+       yOffset = (yOffset- yOffset1)+y;
+
+        new Actions(driver).dragAndDropBy(dragMe, xOffset, yOffset).perform(); //dragAndDropBy - a method for coordinates
+        return this;
+    }
 }

@@ -17,6 +17,11 @@ public class DropDragTests extends TestBase {
     public void dragMeTest(){
         new DroppablePage(driver).actionDragMe()
                 .assertDropped("Dropped!");
+    }
 
+    @Test
+    public void dragMeByTest(){
+        new DroppablePage(driver).actionDragMeBy(20,50)   //using coordinates
+                .assertDropped("Dropped!");
     }
 }
