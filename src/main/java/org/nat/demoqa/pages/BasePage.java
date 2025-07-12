@@ -1,6 +1,5 @@
 package org.nat.demoqa.pages;
 
-import org.nat.demoqa.pages.form.PracticeFormPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
