@@ -51,14 +51,14 @@ public class TextBoxPage extends BasePage {
         return this;
     }
 
-//    @FindBy(xpath = "//p[@id='currentAddress' and contains(text(), 'Current Address :')]")
-//    WebElement currentAddr;
-//    @FindBy(xpath = "//p[@id='permanentAddress' and contains(text(), 'Permananet Address :')]")
-//    WebElement permanentAddr;
-//
-//    public TextBoxPage assertCopyPastText(String text) {
-//        Assert.assertTrue(isTextPresent(currentAddr, text));
-//        Assert.assertTrue(isTextPresent(permanentAddr, text));
-//        return this;
-//    }
+   /* @FindBy(xpath = "//p[@id='currentAddress' and contains(text(), 'Current Address :')]")
+    WebElement currentAddr;
+    @FindBy(xpath = "//p[@id='permanentAddress' and contains(text(), 'Permananet Address :')]")
+    WebElement permanentAddr;
+
+    public TextBoxPage assertCopyPastText(String text) {
+        Assert.assertTrue(isTextPresent(currentAddr, text));
+        Assert.assertTrue(isTextPresent(permanentAddr, text));
+        return this;
+    }*/
 }

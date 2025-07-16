@@ -5,10 +5,7 @@ import org.nat.demoqa.pages.alertsFramesWindows.NestedFramesPage;
 import org.nat.demoqa.pages.bookStore.BookStorePage;
 import org.nat.demoqa.pages.bookStore.LoginPage;
 import org.nat.demoqa.pages.bookStore.ProfilePage;
-import org.nat.demoqa.pages.elements.BrokenLinksImagesPage;
-import org.nat.demoqa.pages.elements.ButtonsPage;
-import org.nat.demoqa.pages.elements.LinksPage;
-import org.nat.demoqa.pages.elements.TextBoxPage;
+import org.nat.demoqa.pages.elements.*;
 import org.nat.demoqa.pages.form.PracticeFormPage;
 import org.nat.demoqa.pages.interactions.DroppablePage;
 import org.nat.demoqa.pages.widgets.*;
@@ -134,5 +131,12 @@ public class SidePanel extends BasePage {
     public TextBoxPage selectTextBox() {
         clickWithJSExecutor(textBox,0, 500);
         return new TextBoxPage(driver);
+    }
+
+    @FindBy(xpath = "//span[.='Upload and Download']")
+    WebElement upload;
+    public UploadPage selectUpload() {
+        clickWithJSExecutor(upload,0, 500);
+        return new UploadPage(driver);
     }
 }
