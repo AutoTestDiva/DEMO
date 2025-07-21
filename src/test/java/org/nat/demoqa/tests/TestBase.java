@@ -2,12 +2,18 @@ package org.nat.demoqa.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.Browser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
 public class TestBase {
+
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
+    String browser = System.getProperty("browser", Browser.CHROME.browserName());
     public WebDriver driver;
 
     @BeforeMethod
