@@ -1,16 +1,16 @@
 package org.nat.demoqa.utils;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.WebDriverListener;
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.nio.file.Files;
 import java.util.List;
 import java.util.Random;
 
@@ -35,7 +35,11 @@ public class MyListener implements WebDriverListener {
         WebDriver driver = (ChromeDriver) target;
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File tmp = screenshot.getScreenshotAs(OutputType.FILE);
-        Files.
+        try {
+            Files.copy(tmp, new File(link)); //choice class Files google -import com.google.common.io.File
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
